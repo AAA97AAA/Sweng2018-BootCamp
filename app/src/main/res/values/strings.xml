@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Bootcamp 2.0</string>
+    <string name="greetingMessage">Please enter your name.</string>
+    <string name="mainGoButton">Send Personal Data</string>
+    <string name="mainNameHint">Name</string>
+    <string name="userMessage">Hello %s!</string>
 </resources>

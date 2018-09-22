@@ -1,14 +1,13 @@
 package ch.epfl.sweng.bootcamp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+@SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity {
 
     private EditText MainName;
@@ -21,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        MainName = (EditText) findViewById(R.id.mainName);
-        GreetingMessage = (TextView) findViewById(R.id.greetingMessage);
-        MainGoButton = (Button) findViewById(R.id.mainGoButton);
+        MainName = findViewById(R.id.mainName);
+        GreetingMessage = findViewById(R.id.greetingMessage);
+        MainGoButton = findViewById(R.id.mainGoButton);
 
         MainGoButton.setOnClickListener(MainGoButtonListener);
     }
 
-    private View.OnClickListener  MainGoButtonListener = new View.OnClickListener() {
+    private final View.OnClickListener  MainGoButtonListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            GreetingMessage.setText("Hello " + MainName.getText() + "!");
+            GreetingMessage.setText(getString(R.string.userMessage, MainName.getText()));
         }
 
     };
